@@ -6,12 +6,12 @@
 
 | Column   | Type    | Options                        |
 | -------- | ------- | ------------------------------ |
-| user_id  | integer | null: false, foreign_key: true |
-| group_id | integer | null: false, foreign_key: true |
+| user_id  | references | null: false, foreign_key: true |
+| group_id | references | null: false, foreign_key: true |
 
 ### Association
-- has_many :groups
-- has_many :users
+- belongs_to :group
+- belongs_to :user
 
 ## groups table
 
@@ -29,8 +29,6 @@
 | Column     | Type    | Options                        |
 | ---------- | ------- | ------------------------------ |
 | name  | string | null: false |
-| mail_address | string | null: false |
-| password     | string | null: false|
 
 ### Association
 - has_many :members
@@ -43,8 +41,8 @@
 | -------- | ------- | ------------------------------ |
 | body     | Text    |                                |
 | image    | string  |                                |
-| group_id | integer | null: false, foreign_key: true |
-| user_id  | integer | null: false, foreign_key: true |
+| group_id | references | null: false, foreign_key: true |
+| user_id  | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to: user

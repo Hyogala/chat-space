@@ -1,4 +1,22 @@
-!!!
-%html
-  %body
-    hello world!
+.wrapper
+  .chat-side
+    .side-header
+      %p tea
+      %ul.user-menu
+        %li.user-menu__edit-user 
+          %a{ href: 'https://google.co.jp'}
+            %i.fa.fa-edit
+        %li.user-menu__new-group
+          %a{ href: 'https://google.co.jp'}
+            %i.fa.fa-cog
+    .side-groups
+      %a{ href: 'https://google.co.jp', id: 'aaa'}
+        .group
+          %p.group__group-name test
+          %p.group__latest-message まだメッセージがありません
+      %a{ href: 'https://google.co.jp', id: 'aaa'}
+        .group
+          %p.group__group-name test
+          %p.group__latest-message まだメッセージがありません
+
+  .chat-main

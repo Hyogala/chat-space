@@ -1,0 +1,6 @@
+@mixin font-main() {
+  font-size: 12px;
+  color: #999999;
+}
+// 呼び出し→ @include font-basic;
+// @import~ 参照設定を行う

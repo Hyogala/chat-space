@@ -1,3 +1,5 @@
+.flash-box
+  .notice グループを作成しました
 .wrapper
   .chat-side
     .side-header
@@ -9,6 +11,7 @@
         %li.user-menu__new-group
           %a{ href: 'https://google.co.jp'}
             %i.fa.fa-cog
+
     .side-groups
       = render "group"
       = render "group"
@@ -20,6 +23,7 @@
       = render "group"
       = render "group"
       = render "group"
+
   .chat-main
     .main-header
       .current-group
@@ -30,7 +34,6 @@
           %li.member-list__member 長瀬智也
       %a.main-header__edit-btn{ href: 'https://google.co.jp'}
         Edit
-        
         
     .messages
       .message
@@ -43,10 +46,10 @@
           %p.upper-info__user sak
           %p.upper-info__date 2019/05/05~
         %p.message__text aaaaaaaaaaaaaa
+
     .form
       %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/712/messages", :enctype => "multipart/form-data", :method => "post"}
         %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-        -# %input{:name => "authenticity_token", :type => "hidden", :value => "+T8/dvtxYw+hwKYJUssM46IJ6+g6iRKW0VRPewDRoLyoIz6PnB2tFZtgtkhtkHYkGk7WQfMzEqBh32+lUfiRdQ=="}/
         .input-box
           %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
           %label.image-label{:for => "message_image"}

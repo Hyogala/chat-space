@@ -32,7 +32,7 @@
           Member : 
           %li.member-list__member 城島茂
           %li.member-list__member 長瀬智也
-      = link_to 'Edit', 'https://google.co.jp', :class=>'main-header__edit-btn'
+      = link_to 'Edit', 'https://google.co.jp', class: 'main-header__edit-btn'
         
     .messages
       .message
@@ -47,14 +47,11 @@
         %p.message__text aaaaaaaaaaaaaa
 
     .form
-      %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "https://google.co.jp", :enctype => "multipart/form-data", :method => "post"}
-        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %form#new_message.new-message{accept: {charset: "UTF-8"}, action: "https://google.co.jp", enctype: "multipart/form-data", method: "post"}
+        %input{name: "utf8", type: "hidden", value: "✓"}/
         .input-box
-          %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-          %label.image-label{:for => "message_image"}
+          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+          %label.image-label{for: "message_image"}
             %i.fa.fa-image
-            %input#message_image.image-label__input{:name => "message[image]", :type => "file"}/
-        %input.new-message__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
-
-        
-    
+            %input#message_image.image-label__input{name: "message[image]", type: "file"}/
+        %input.new-message__submit-btn{data: {disable_with: "Send"}, name: "commit", type: "submit", value: "Send"}/

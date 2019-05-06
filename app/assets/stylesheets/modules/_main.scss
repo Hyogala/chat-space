@@ -54,10 +54,7 @@
 
 .side-groups{
   height: calc(100vh - 100px);
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 0px;
-  padding-left: 20px;
+  padding: 20px 20px 0px;
   overflow: scroll;
 }
 
@@ -80,13 +77,22 @@
 
 .main-header{
   height: 100px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 0 40px;
   justify-content: space-between;
   display: flex;
-  border-bottom-color: #eeeeee;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
+  border-bottom: #eeeeee solid 1px;
+  &__edit-btn{
+    font-size: 16px;
+    color:$mainBtnColor;
+    text-decoration:none;
+    a:visited { color:$mainBtnColor; text-decoration:none }
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 30px;
+    padding: 0 20px;
+    border: $mainBtnColor solid 1px;
+  }
 }
 
 .current-group{
@@ -103,22 +109,6 @@
   &__member{
     margin-left: 4.8px;
   }
-}
-
-.main-header__edit-btn{
-  font-size: 16px;
-  color:$mainBtnColor;
-  text-decoration:none;
-  a:visited { color:$mainBtnColor; text-decoration:none }
-  box-sizing: border-box;
-  height: 40px;
-  line-height: 40px;
-  margin-top: 30px;
-  padding-right: 20px;
-  padding-left: 20px;
-  border-color: $mainBtnColor;
-  border-style: solid;
-  border-width: 1px;
 }
 
 .messages{

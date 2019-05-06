@@ -1,0 +1,57 @@
+.flash-box
+  .notice グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      %p tea
+      %ul.user-
+        %li.user-menu__edit-user 
+          = link_to 'https://google.co.jp' do
+            %i.fa.fa-edit
+        %li.user-menu__new-group
+          = link_to 'https://google.co.jp' do
+            %i.fa.fa-cog
+
+    .side-groups
+      = render "group"
+      = render "group"
+      = render "group"
+      = render "group"
+      = render "group"
+      = render "group"
+      = render "group"
+      = render "group"
+      = render "group"
+      = render "group"
+
+  .chat-main
+    .main-header
+      .current-group
+        %h2.current-group__name TOKIO
+        %ul.member-list
+          Member : 
+          %li.member-list__member 城島茂
+          %li.member-list__member 長瀬智也
+      = link_to 'Edit', 'https://google.co.jp', class: 'main-header__edit-btn'
+        
+    .messages
+      .message
+        .upper-info
+          %p.upper-info__user sak
+          %p.upper-info__date 2019/05/04~
+        %p.message__text teeeeeeeexttttttt
+      .message
+        .upper-info
+          %p.upper-info__user sak
+          %p.upper-info__date 2019/05/05~
+        %p.message__text aaaaaaaaaaaaaa
+
+    .form
+      %form#new_message.new-message{accept: {charset: "UTF-8"}, action: "https://google.co.jp", enctype: "multipart/form-data", method: "post"}
+        %input{name: "utf8", type: "hidden", value: "✓"}/
+        .input-box
+          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+          %label.image-label{for: "message_image"}
+            %i.fa.fa-image
+            %input#message_image.image-label__input{name: "message[image]", type: "file"}/
+        %input.new-message__submit-btn{data: {disable_with: "Send"}, name: "commit", type: "submit", value: "Send"}/

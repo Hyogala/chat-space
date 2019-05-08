@@ -120,10 +120,12 @@
         margin-left: 10px;
       }
     }
-    &__text{
-      font-size: 14px;
-      color: $black;
-      margin-bottom: 10px;
+    .lower-meesage{
+      &__content{
+        font-size: 14px;
+        color: $black;
+        margin-bottom: 10px;
+      }
     }
   }
 }
@@ -134,23 +136,22 @@
   padding: 20px 40px;
   .new-message{
     display: flex;
-    .input-box {
+    &__input-box {
       position: relative;
       width: 100%;
-      &__text {
+      &__text-field {
         height: 50px;
         width: 100%;
         padding: 0 40px 0 10px;
         color: $black;
         border-style: none;
       }
-      .image-label {
-        font-size: 1.3rem;
+      &__image-btn {
         position: absolute;
         top: 10px;
         right: 10px;
         cursor: pointer;
-        &__input {
+        &__hidden {
           display: none;
         }
       }
@@ -166,5 +167,3 @@
     }
   }
 }
-
-

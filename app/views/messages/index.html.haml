@@ -11,23 +11,14 @@
       = link_to 'Edit', 'https://google.co.jp', class: 'main-header__edit-btn'
         
     .messages
-      .message
-        .upper-info
-          %p.upper-info__user sak
-          %p.upper-info__date 2019/05/04~
-        %p.message__text teeeeeeeexttttttt
-      .message
-        .upper-info
-          %p.upper-info__user sak
-          %p.upper-info__date 2019/05/05~
-        %p.message__text aaaaaaaaaaaaaa
+      =render @messages
 
     .form
-      %form#new_message.new-message{accept: {charset: "UTF-8"}, action: "https://google.co.jp", enctype: "multipart/form-data", method: "post"}
-        %input{name: "utf8", type: "hidden", value: "✓"}/
-        .input-box
-          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-          %label.image-label{for: "message_image"}
-            %i.fa.fa-image
-            %input#message_image.image-label__input{name: "message[image]", type: "file"}/
-        %input.new-message__submit-btn{data: {disable_with: "Send"}, name: "commit", type: "submit", value: "Send"}/
+      = form_for [@group, @message] do |f|
+        .new-message
+          .new-message__input-box
+            = f.text_field :content, class: 'new-message__input-box__text-field', placeholder: 'type a message'
+            = f.label :image, class: 'new-message__input-box__image-btn' do
+              %i.fa.fa-image.fa-lg
+                = f.file_field :image, class: "new-message__input-box__image-btn__hidden"
+          = f.submit 'Send', class: 'new-message__submit-btn'

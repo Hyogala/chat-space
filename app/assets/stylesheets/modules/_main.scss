@@ -120,10 +120,12 @@
         margin-left: 10px;
       }
     }
-    &__text{
-      font-size: 14px;
-      color: $black;
-      margin-bottom: 10px;
+    .lower-meesage{
+      &__content{
+        font-size: 14px;
+        color: $black;
+        margin-bottom: 10px;
+      }
     }
   }
 }
